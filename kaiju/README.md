@@ -3,14 +3,16 @@
 ###### Jul 14 2017
 by: Jean Macklaim
 
+---
+
 Kaiju (http://kaiju.binf.ku.dk) is a program that will take metagenomic or transcriptomic reads and predict the taxonomic distribution based on comparison to a database (typically acquired from NCBI)
 
 It is supposedly faster/better than kraken (we've used this previously)
 
-#### Required to run
+### Required to run
 `run_kaiju.sh`
 
-##### Installing kaiju and database
+### Installing kaiju and database
 Kaiju is installed on Agrajag:
 `/data/bin/kaiju/bin`
 
@@ -27,7 +29,7 @@ nohup ../bin/makeDB.sh -e &
 ```
 "Download the nr database as above, but additionally include proteins from fungi and microbial eukaryotes."
 
-##### Running kaiju
+### Running kaiju
 There is a shell script `run_kaiju.sh`. To run, do the folloing
 - Make a working directory `mkdir project_name`
 - Inside the working directory should be a data directory (usually called `data`) containing the **demultiplexed** read files in `.fastq.gz` format/extension. The file names should look like: `F8G-2_S43_R1_001.fastq.gz` where everything before the first underscore `_` will be taken as the sample name for downstream output
@@ -37,7 +39,7 @@ There is a shell script `run_kaiju.sh`. To run, do the folloing
 To run (assuming you have the script in your working directory):
 `./run_kaiju.sh`
 
-##### Output
+### Output
 The `.summary` files will give the %mapped to each taxon. If you want to quickly see the top mapped for all samples try:
 
 `head *.summary > all_summary.txt`
