@@ -21,7 +21,7 @@ I've already downloaded a database for running. **_You do not need to reinstall 
 Make a database directory
 `mkdir /Volumes/data/bin/kaiju/kaijudb`
 
-Choose a databse. This will change the amount of storage needed and the amount of RAM to run
+Choose a database. This will change the amount of storage needed and the amount of RAM to run
 
 ```
 cd kaijudb/
@@ -30,7 +30,7 @@ nohup ../bin/makeDB.sh -e &
 "Download the nr database as above, but additionally include proteins from fungi and microbial eukaryotes."
 
 ### Running kaiju
-There is a shell script `run_kaiju.sh`. To run, do the folloing
+There is a shell script `run_kaiju.sh`. To run, do the following
 - Make a working directory `mkdir project_name`
 - Inside the working directory should be a data directory (usually called `data`) containing the **demultiplexed** read files in `.fastq.gz` format/extension. The file names should look like: `F8G-2_S43_R1_001.fastq.gz` where everything before the first underscore `_` will be taken as the sample name for downstream output
 - Paths to kaiju and kaijudb are set at the top of the script **you probably don't have to change these**, but you should set the path to your data (reads) directory
