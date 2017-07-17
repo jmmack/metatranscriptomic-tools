@@ -1,26 +1,22 @@
 #!/usr/bin/env bash
 
 #19Apr2017 - JM
-#copied file from 2016_corn_metagenomes/seed_compare
+#update: Jul 17, 2017
 # 1) Use diamond to compare all read files to the SEED fig.peg database
 # 2) Merge all the best hits into a counts table
-
-#Note: diamond is already in my path for running
-#[mmacklai@agrajag map_seed]$ which diamond
-#/Volumes/bin/diamond
 
 #--------------------------------------------------------------------------
 # Run all samples against the SEED database
 #--------------------------------------------------------------------------
+# Variables to define:
+DATA="" #the path to your reads
+OUT="diamond_output/" #output directory name
 
+DB="/Volumes/data/SEED_database/subsys4.dmnd"	#Path to SEED database on Agrajag
+BIN="/Volumes/data/bin/diamond"	#Path to DIAMOND on Agrajag
 
-WD="/Volumes/data/A_n_L/2017_metagenomes/NS_00019/map_seed"
-data="../data"
-DB="/Volumes/data/SEED_database/subsys4.dmnd"
-OUT="diamond_output/";
-
-cd $WD
-mkdir -p $WD/$OUT #Make this directory if it doesn't exist
+#---------------------------------------------------------------------
+mkdir -p $OUT #Make this directory if it doesn't exist
 
 for f in $data/*.gz; do	# e.g. F2G-3_S13_R1_001.fastq.gz
 
