@@ -1,6 +1,6 @@
 ## Diamond pipeline to map reads to SEED database
 
-##### April 19 2017
+##### Jul 19 2017
 By: Jean Macklaim
 
 ---
@@ -13,7 +13,7 @@ As Jean for more information....
 ---
 ### Required to run
 ```
-run_diamond.sh
+diamond_to_seed_to_counts.sh
 merge_counts.pl
 blast_to_counts.pl
 ```
@@ -24,20 +24,19 @@ The SEED database (pre-formatted for DIAMOND) is `/Volumes/data/SEED_database/su
 
 ### Running a DIAMOND search
 
-There is a shell script `run_diamond.sh`. To run, do the following
-- Make a working directory *inside* your project directory `mkdir map_seed`. Put `run_diamond.sh` in this directory.
-- Inside the project directory should be a data directory (usually called `data`) containing the **demultiplexed** read files in `.fastq.gz` format/extension. The file names should look like: `F8G-2_S43_R1_001.fastq.gz` where everything before the first underscore `_` will be taken as the sample name for downstream output
+There is a shell script `diamond_to_seed_to_counts.sh`. To run, do the following
+- You should have a data directory (usually called `data`) containing the **demultiplexed** read files in `.fastq.gz` format/extension. The file names should look like: `F8G-2_S43_R1_001.fastq.gz` where everything before the file extension `.fastq.gz` will be taken as the sample name for downstream output
+- Make a working directory e.g. `mkdir map_seed`. Copy `diamond_to_seed_to_counts.sh` and the `bin` directory containing two perl scripts `blast_to_counts.pl` and `merge_counts.pl` to this directory
 
-Before running the script `run_diamond.sh`:
-- Define the directory containing your reads (top of script)
-- Two perl scripts `blast_to_counts.pl` and `merge_counts.pl` must be in the same place you are running `run_diamond.sh`
+Before running the script `diamond_to_seed_to_counts.sh` define the paths at the top of script
 
 Example directory structure:
 - project_name/data/reads.fastq.gz
-- project_name/map_seed/run_diamond.sh
+- project_name/map_seed/diamond_to_seed_to_counts.sh
+- project_name/map_seed/bin/blast_to_counts.pl
 
 Running:
-`nohup ./run_diamond.sh &`
+`nohup ./diamond_to_seed_to_counts.sh &`
 *Note: Since this program takes a while to run, using `nohup` will push it to the background and push any output to terminal to `nohup.out`*
 
 ### Output:
