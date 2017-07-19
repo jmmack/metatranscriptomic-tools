@@ -16,7 +16,7 @@ It is supposedly faster/better than kraken (we've used this previously)
 Kaiju is installed on Agrajag:
 `/data/bin/kaiju/bin`
 
-I've already downloaded a database for running. **_You do not need to reinstall kaji or the database unless you want a new one. Skip to Running kaiju._**
+I've already downloaded a database for running. **_You do not need to reinstall kaiju or the database unless you want a new one. Skip to Running kaiju._**
 
 Make a database directory
 `mkdir /Volumes/data/bin/kaiju/kaijudb`

@@ -1,5 +1,4 @@
-#!/bin/bash
-#this is the shebang needed for agrajag. I know it's not portable, but it's the one that works...
+#!/usr/bin/env bash
 
 # April 27 2017 - JM
 # Run kaiju on all samples in directory ending in .fastq.gz
@@ -9,19 +8,19 @@
 BIN="/Volumes/data/bin/kaiju/bin/"
 DB="/Volumes/data/bin/kaiju/kaijudb/"
 
-DATA="/Volumes/data/A_n_L/2017_metagenomes/NS_00018/data"
-#SP="Undetermined"
+DATA="/Volumes/data/A_n_L/2017_metagenomes/NS_00018/data" #where your reads are
 
 #-----------------------------------------
+#output will be to your working directory
 
-mkdir -p kaiju	#make an output directory if it doesn't exist
-OUT="kaiju"
+#mkdir -p kaiju	#make an output directory if it doesn't exist
+#OUT="kaiju"
 
 for f in $DATA/*.fastq.gz; do
 
-# Split on - and get the first field
+# Split on . and get the first field
 	B=`basename $f`	#this will give the file name out of the whole path
-	NAME=`echo $B | cut -d "_" -f1`	#split on _ and get first field (sample name)
+	NAME=`echo $B | cut -d "." -f1`	#split on _ and get first field (sample name)
 
 #testing
 #	echo $f
@@ -29,10 +28,10 @@ for f in $DATA/*.fastq.gz; do
 #	echo $NAME
 #	exit
 
-	$BIN/kaiju -t $DB/nodes.dmp -f $DB/kaiju_db_nr_euk.fmi -i <(gunzip -c $f) -o $OUT/NS18_$NAME.kaiju.out -z 48
+	$BIN/kaiju -t $DB/nodes.dmp -f $DB/kaiju_db_nr_euk.fmi -i <(gunzip -c $f) -o $NAME.kaiju.out -z 48
 
-	$BIN/kaijuReport -t $DB/nodes.dmp -n $DB/names.dmp -i $OUT/NS18_$NAME.kaiju.out -r genus -o $OUT/NS18_$NAME.kaiju.out.summary
+	$BIN/kaijuReport -t $DB/nodes.dmp -n $DB/names.dmp -i $NAME.kaiju.out -r genus -o $NAME.kaiju.out.summary
 
 done
 
-
+head *.summary > all_summary.txt
