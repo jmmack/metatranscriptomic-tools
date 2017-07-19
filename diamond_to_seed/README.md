@@ -6,7 +6,8 @@ By: Jean Macklaim
 ---
 DIAMOND (https://github.com/bbuchfink/diamond) is a super fast sequencing aligner for protein or DNA translation (nt->protein) searches. The database was custom curated from SEED (http://www.theseed.org/wiki/Main_Page) by Jean to contain non-redundant protein sequences with assigned SEED usbsystem functions.
 
-The SEED database: Briefly, each `fig.peg` sequence comes from an individual genome and has a subsys4 (enzymatic) functional assignment. There are many `fig.pegs` in a subsys4 category. From there, subsys4 are hierarchically organized into broader functional groups (subsys3, subssy2, subsys1) which are non-unique to a subsys4 (i.e. a subsys4 can belong to multiple subsys3).
+The SEED database:  
+Briefly, each `fig.peg` sequence comes from an individual genome and has a subsys4 (enzymatic) functional assignment. There are many `fig.pegs` in a subsys4 category. From there, subsys4 are hierarchically organized into broader functional groups (subsys3, subssy2, subsys1) which are non-unique to a subsys4 (i.e. a subsys4 can belong to multiple subsys3).
 
 As Jean for more information....
 
@@ -30,9 +31,9 @@ There is a shell script `diamond_to_seed.sh`. To run, do the following
 - Before running `diamond_to_seed.sh` define the paths at the top of script
 
 >>Example directory structure:
-- ../project_name/data/reads.fastq.gz
-- ../project_name/map_seed/diamond_to_seed.sh
-- ../project_name/map_seed/bin/blast_to_counts.pl
+>>- ../project_name/data/reads.fastq.gz
+>>- ../project_name/map_seed/diamond_to_seed.sh
+>>- ../project_name/map_seed/bin/blast_to_counts.pl
 
 Running:
 `nohup ./diamond_to_seed.sh &`
