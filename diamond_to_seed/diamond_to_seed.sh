@@ -20,7 +20,7 @@ BIN="bin" #This is where blast_to_counts.pl and merge_counts.pl are
 
 #output paths
 OUT1="diamond_output"
-OUT2="diamond_output/counts_tables"
+OUT2="diamond_output/counts_tables" #This is a temporary directory that will be deleted
 #--------------------------------------------------------------------------------------------------
 # Output
 # There will be 1 output directory:
