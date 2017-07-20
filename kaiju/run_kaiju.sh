@@ -5,11 +5,10 @@
 # Jul 14 2017 - Use this version as a general script
 
 #----------------Setup - change these paths if necessary
-BIN="/Volumes/data/bin/kaiju/bin/"
-DB="/Volumes/data/bin/kaiju/kaijudb/"
-
 DATA="/Volumes/data/A_n_L/2017_metagenomes/NS_00018/data" #where your reads are
 
+BIN="/Volumes/data/bin/kaiju/bin/"	#This is default if you are working n Agrajag
+DB="/Volumes/data/bin/kaiju/kaijudb/"	#This is default if you are working ion Agrajag
 #-----------------------------------------
 #output will be to your working directory
 

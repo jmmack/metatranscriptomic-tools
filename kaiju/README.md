@@ -41,6 +41,4 @@ To run (assuming you have the script in your working directory):
 
 ### Output
 - Output will be pushed to the same directory you run `run_kaiju.sh`
-- The `.summary` files will give the %mapped to each taxon. If you want to quickly see the top mapped for all samples try:
-
-`head *.summary > all_summary.txt`
+- The `.summary` files will give the %mapped to each taxon. The script also automatically makes a head summary file with: `head *.summary > all_summary.txt`
