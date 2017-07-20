@@ -31,10 +31,9 @@ nohup ../bin/makeDB.sh -e &
 
 ### Running kaiju
 There is a shell script `run_kaiju.sh`. To run, do the following
-- Make a working directory `mkdir project_name`
-- Inside the working directory should be a data directory (usually called `data`) containing the **demultiplexed** read files in `.fastq.gz` format/extension. The file names should look like: `F8G-2_S43_R1_001.fastq.gz` where everything before the first underscore `_` will be taken as the sample name for downstream output
+- You should have aworking directroy with a data directory (usually called `data`) containing the **demultiplexed** read files in `.fastq.gz` format/extension. The file names should look like: `F8G-2_S43_R1_001.fastq.gz` where everything before the first underscore `.` will be taken as the sample name for downstream output
 - Paths to kaiju and kaijudb are set at the top of the script **you probably don't have to change these**, but you should set the path to your data (reads) directory
-- Note: a `kaiju` output directory will be created to dump the output files
+
 
 To run (assuming you have the script in your working directory):
 `./run_kaiju.sh`
