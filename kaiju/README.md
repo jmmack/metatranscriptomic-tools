@@ -31,7 +31,8 @@ nohup ../bin/makeDB.sh -e &
 
 ### Running kaiju
 There is a shell script `run_kaiju.sh`. To run, do the following
-- You should have aworking directroy with a data directory (usually called `data`) containing the **demultiplexed** read files in `.fastq.gz` format/extension. The file names should look like: `F8G-2_S43_R1_001.fastq.gz` where everything before the first underscore `.` will be taken as the sample name for downstream output
+- You should have a working directory with a data directory (usually called `data`) containing the **demultiplexed** read files in `.fastq.gz` format/extension. The file names should look like: `F8G-2_S43_R1_001.fastq.gz` where everything before the first underscore `.` will be taken as the sample name for downstream output
+- In your working directory, make a directory for kaiju `mkdir kaiju` and put the script inside it
 - Paths to kaiju and kaijudb are set at the top of the script **you probably don't have to change these**, but you should set the path to your data (reads) directory
 
 
@@ -39,6 +40,7 @@ To run (assuming you have the script in your working directory):
 `./run_kaiju.sh`
 
 ### Output
-The `.summary` files will give the %mapped to each taxon. If you want to quickly see the top mapped for all samples try:
+- Output will be pushed to the same directory you run `run_kaiju.sh`
+- The `.summary` files will give the %mapped to each taxon. If you want to quickly see the top mapped for all samples try:
 
 `head *.summary > all_summary.txt`
