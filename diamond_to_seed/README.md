@@ -21,6 +21,7 @@ blast_to_counts.pl
 
 On Agrajag:
 DIAMOND in installed in `/Volumes/data/bin/diamond`
+Scripts installed in `/Volumes/bin/diamond-program/` (check with github version for updates)
 The SEED database (pre-formatted for DIAMOND) is `/Volumes/data/SEED_database/subsys4.dmnd`
 
 ### Running a DIAMOND search
