@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 #24Jun2016 - JM
-#update: Jul 17, 2017
+#update: Aug 15, 2017
 # 1) Use diamond to compare all read files to the SEED fig.peg database
 # 2) Merge all the best hits into a counts table
 
@@ -14,9 +14,9 @@
 
 DATA="" #the path to your reads (in .fastq.gz format)
 
-DIAMOND="/Volumes/data/diamond/diamond"			#diamond install location
+DIAMOND="/Volumes/bin/diamond"			#diamond install location
 DB="/Volumes/data/SEED_database/subsys4.dmnd"	#Path to SEED database (default: on Agrajag)
-BIN="bin" #This is where blast_to_counts.pl and merge_counts.pl are
+BIN="/Volumes/bin/diamond-program" #This is where blast_to_counts.pl and merge_counts.pl are. Default for Agrajag
 
 #output paths
 OUT1="diamond_output"
