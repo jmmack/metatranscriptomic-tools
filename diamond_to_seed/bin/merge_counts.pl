@@ -19,7 +19,7 @@ foreach my $file (@files) {
 
 		my @split = split(/\t/, $l);
 
-		if ($l =~ m/^subsys4/){
+		if ($l =~ m/^func/){
 			$sample = $split[1];
 			$sample_list{$sample} = 0 if !exists $sample_list{$sample}; #keep track of all samples for later
 		}else{
@@ -33,7 +33,7 @@ foreach my $file (@files) {
 
 ## $s4 is subsys4, $sn is sample name
 
-print "subsys4";
+print "func";
 foreach my $sn (sort(keys %sample_list)) {							#Make the header
 		print "\t$sn";
 }

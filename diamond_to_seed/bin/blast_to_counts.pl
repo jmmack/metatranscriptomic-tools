@@ -6,7 +6,7 @@ use strict;
 # output: a counts table per subsys4
 #		The top hit will be counted for each read as 1 count
 #		This will print out all the unique subsys4 from the top hits
-# Meant to be run with the bash wrapper: /Volumes/Data/Corn_metagenome_2016/seed_compare/get_counts.sh
+# Meant to be run with the bash wrapper: run_diamond.sh
 
 my $blast = $ARGV[0];		#The file, e.g.
 my $sample_name = $ARGV[1];
@@ -34,8 +34,8 @@ close $IN;
 my $file = "$sample_name" . "_" . "counts" . ".txt";
 
 #counts_table was a directory already created
-open (my $OUT, ">", $path . $file)  or die "$!\n";
-print $OUT "subsys4\t$ARGV[1]\n";
+open (my $OUT, ">", "$path/$file")  or die "$!\n";
+print $OUT "func\t$ARGV[1]\n";
 foreach my $key (keys %counts){
 	print $OUT "$key\t$counts{$key}\n";
 }
