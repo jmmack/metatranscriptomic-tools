@@ -9,6 +9,8 @@
 # Setup
 # This script should be in your working directory. Within your working directory should be the .gz
 #	sequence files.
+# You need a pre-formated database to compare against
+# 	diamond makedb --in fastas.complex_plusold_subsys4.faa -d subsys4
 #--------------
 # Paths to change:
 
@@ -44,9 +46,9 @@ for f in $DATA/*.gz; do	# e.g. F12_S17_L004_R2_001.fastq.gz
 	B=`basename $f`
 	NAME=`echo $B | cut -d "." -f1`
 
-#	echo $f
-#	echo $B
-#	echo $NAME
+#	echo $f	#full path
+#	echo $B	#file name
+#	echo $NAME	#sample name
 #	exit
 
 #e.g. $DIAMOND blastx -d $DB -q ../data/sequence_files/F12_S17_L004_R2_001.fastq.gz -a diamond_output/F12_S17_L004_R2_001 --salltitles -k 3
