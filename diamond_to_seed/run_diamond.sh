@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 #24Jun2016 - JM
-#update: Aug 15, 2017
+#updates: Aug 15 2017, Feb 2018
 # 1) Use diamond to compare all read files to the SEED fig.peg database
 # 2) Merge all the best hits into a counts table
 
@@ -53,14 +53,15 @@ for f in $DATA/*.gz; do	# e.g. F12_S17_L004_R2_001.fastq.gz
 
 #e.g. $DIAMOND blastx -d $DB -q ../data/sequence_files/F12_S17_L004_R2_001.fastq.gz -a diamond_output/F12_S17_L004_R2_001 --salltitles -k 3
 
-	$DIAMOND blastx -d $DB -q ${f} -a ${OUT1}/${NAME} --salltitles -k 1
+	$DIAMOND blastx -d $DB -q ${f} -a ${OUT1}/${NAME}.m8 --salltitles -k 1 --outfmt 6
 		# --salltitles           print full subject titles in output files
 		# --max-target-seqs (-k) maximum number of target sequences to report alignments for
-		# by default, diamond will use all available cores
+		# -p can be adjusted for the number of threads to use, by default diamond will use all available cores
 		# -k is the number of hits to report
+		# --outfmt 6 will give BLAST tabular (m8) format
 
-# Convert diamond output to blast tab-delimited format
-	$DIAMOND view -a ${OUT1}/${NAME}.daa -o ${OUT1}/${NAME}.m8
+# Convert diamond output to blast tab-delimited format - THIS IS DONE IN THE BLAST COMMAND NOW
+#	$DIAMOND view -a ${OUT1}/${NAME}.daa -o ${OUT1}/${NAME}.m8
 
 done
 
