@@ -9,7 +9,7 @@
 # Setup
 # This script should be in your working directory. Within your working directory should be the .gz
 #	sequence files.
-# You need a pre-formated database to compare against
+# You need a pre-formated database to compare against. This has to match the version of Diamond oyu are using
 # 	diamond makedb --in fastas.complex_plusold_subsys4.faa -d subsys4
 #--------------
 # Paths to change:
