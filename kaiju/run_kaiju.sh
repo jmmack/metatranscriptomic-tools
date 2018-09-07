@@ -7,8 +7,8 @@
 #----------------Setup - change these paths if necessary
 DATA="/Volumes/data/A_n_L/2017_metagenomes/NS_00018/data" #where your reads are
 
-BIN="/Volumes/data/bin/kaiju/bin/"	#This is default if you are working n Agrajag
-DB="/Volumes/data/bin/kaiju/kaijudb/"	#This is default if you are working ion Agrajag
+BIN="/Volumes/data/bin/kaiju/bin/"	#This is default if you are working on Agrajag
+DB="/Volumes/data/bin/kaiju/kaijudb/"	#This is default if you are working on Agrajag
 #-----------------------------------------
 #output will be to your working directory
 
