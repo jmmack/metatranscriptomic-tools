@@ -53,7 +53,7 @@ for f in $DATA/*.gz; do	# e.g. F12_S17_L004_R2_001.fastq.gz
 
 #e.g. $DIAMOND blastx -d $DB -q ../data/sequence_files/F12_S17_L004_R2_001.fastq.gz -a diamond_output/F12_S17_L004_R2_001 --salltitles -k 3
 
-	$DIAMOND blastx -d $DB -q ${f} -a ${OUT1}/${NAME}.m8 --salltitles -k 1 --outfmt 6
+	$DIAMOND blastx -d $DB -q ${f} -o ${OUT1}/${NAME}.m8 --salltitles -k 1 --outfmt 6
 		# --salltitles           print full subject titles in output files
 		# --max-target-seqs (-k) maximum number of target sequences to report alignments for
 		# -p can be adjusted for the number of threads to use, by default diamond will use all available cores
